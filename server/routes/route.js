@@ -2,7 +2,7 @@ const app = require('express')();
 const data = require('../../booksList')
 const cors = require("cors");
 
-// const User = require("../models/user-model")
+const User = require("../models/user-model")
 
 app.get('/books', (req, res) => {
     res.status(200).json(data)

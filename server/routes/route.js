@@ -1,5 +1,6 @@
 const app = require("express")();
 const data = require("../../booksList");
+const bcrypt = require('bcrypt');
 
 const User = require("../models/user-model");
 
@@ -14,11 +15,14 @@ app.post("/login", (req, res) => {
 		User.findOne({ email: email }, (err, user) => {
 			if (err) console.log('err', err)
 			if (user) {
-				if (user && user.password === password) {
-					res.status(200).send("login success");
-				} else {
-					res.status(400).send("invalid password");
-				}
+				bcrypt.compare(password, user.password, (err, response) => {
+					if (err) console.log('err', err)
+					if (response) {
+						res.status(200).send('login success')
+					} else {
+						res.status(412).send('invalid password')
+					}
+				})
 			} else {
 				res.status(400).send("invalid email");
 			}
@@ -28,14 +32,18 @@ app.post("/login", (req, res) => {
 	}
 });
 
-app.post("/register", (req, res) => {
-	const body = req.body;
+app.post("/register", async (req, res) => {
+	const { email, password } = req.body;
+
+	// hasher les mots de passe
+	const salt = await bcrypt.genSalt(10)
+	const hash = await bcrypt.hash(password, salt)
 	
-  if (body.email && body.password) {
+  if (email && password) {
     const newUser = {
-      email: body.email,
-      password: body.password
-    };
+      email: email,
+      password: hash
+		};
 
     User.create(newUser, (err, res) => {
       if (err) console.log(err);

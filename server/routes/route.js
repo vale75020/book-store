@@ -40,13 +40,10 @@ app.post("/register", async (req, res) => {
 	const hash = await bcrypt.hash(password, salt)
 	
   if (email && password) {
-    let newUser = {
+    const newUser = {
       email: email,
-      password: password
+      password: hash
 		};
-		
-		// ici je remplace le password du req.body par le password hashé
-		newUser = {...newUser, password: hash}
 
     User.create(newUser, (err, res) => {
       if (err) console.log(err);

@@ -27,7 +27,10 @@ export default class Books extends Component {
 
     const bookList = this.state.books.map(book => {
       return (
-        <div key={book.id} style={{padding: "20px"}}>
+        <div
+          key={book.id}
+          style={{ padding: "20px"}}
+        >
           <h1>Title: {book.title}</h1>
           <h2>Author: {book.author}</h2>
           <img

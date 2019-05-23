@@ -4,25 +4,33 @@
   justify-content: space-between
 }
 
-.login {
+
+.login, .register {
   margin: 0 auto;
   margin-top: 30px;
-  width: 40%;
+  width: 50%;
   text-align: center;
 }
 
-.loginInput {
+.loginInput, .registerInput {
   width: 100%;
   height: 20px;
   margin: 10px;
 }
 
-.buttonLogin {
+.buttonLogin, .buttonRegister {
   width: 70%;
   font-size: 20px;
   margin: 10px;
   background-color: deepskyblue
 }
+
+.wrapper {
+  width: 100%;
+}
+
+
+
 
 
 

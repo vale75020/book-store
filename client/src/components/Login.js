@@ -7,22 +7,25 @@ class Login extends Component {
   state = {
     redirect: false,
     email:"",
-    password:""
+    password:"",
+    msgBack: false,
+    userMsg: '',
   }
 
   login = () => {
-
     axios.post('http://localhost:1407/login', {
       email: this.state.email,
       password: this.state.password
     })
-    .then( (response) => {
+    .then((response) => {
+      console.log(response)
       localStorage.setItem('token', response.data.token)
 
       this.setState({ redirect: true }) 
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch((error) =>  {
+      console.log(error.response.data.userMsg);
+      this.setState({ msgBack: true, userMsg: error.response.data.userMsg })
     });
     this.setState({  // reinitializer inputs
       email:"",
@@ -63,6 +66,7 @@ class Login extends Component {
           placeholder="enter your password"
           required
         />
+        {this.state.userMsg}
         <button className="buttonLogin" onClick={this.login}>LOGIN</button>
         {this.isLoginRedirect()}
       </div>

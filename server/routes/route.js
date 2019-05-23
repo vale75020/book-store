@@ -28,20 +28,22 @@ app.post("/login", (req, res) => {
                 console.log("token", token);
                 res.json({
                   token, // token: token
-                  status: "login success"
+                  userMsg: "login success"
                 }); // post => res = token
               }
             );
           } else {
-            res.status(412).send("invalid password");
+            res.status(412).send({
+              userMsg: "invalid password"
+            });
           }
         });
       } else {
-        res.status(400).send("invalid email");
+        res.status(400).send({userMsg : "invalid email"});
       }
     });
   } else {
-    res.status(412).send("email and password are required fields");
+    res.status(412).send({userMsg : "email and password are required fields"});
   }
 });
 
@@ -67,7 +69,7 @@ app.post("/register", async (req, res) => {
           });
         })
       } else {
-          res.send({
+          res.status(422).send({
             userMsg: "User already exists"
           })
         }

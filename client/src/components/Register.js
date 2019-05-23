@@ -3,9 +3,8 @@ import axios from "axios";
 
 class Register extends Component {
   state = {
-    userExist: false,
-    successUser: false,
-    errMsg: '',
+    msgBack: false,
+    userMsg: '',
     email: "",
     password: ""
   };
@@ -16,7 +15,7 @@ class Register extends Component {
 
     this.setState({
       err: "",
-      successUser: ""
+      msgBack: ""
     });
     const newUser = {
       // new user
@@ -28,15 +27,17 @@ class Register extends Component {
       .then(response => { 
         console.log(response)
         this.setState({
-          successUser: true, // confirmation creation user
-          errMsg: response.data.userMsg,
+          msgBack: true, // confirmation creation user
+          userMsg: response.data.userMsg,
           email: "",
           password: ""
         });
       })
       .catch(err => {
-        console.log("in error", err);
-        this.setState({ err: 'L"utilisateur existe deja' });
+        this.setState({    
+          msgBack: true, // confirmation creation user
+          userMsg: err.response.data.userMsg})
+        //console.log("in error", err.response.data.userMsg);
       });
   };
 
@@ -74,10 +75,7 @@ class Register extends Component {
                 Register
               </button>
 
-              {this.state.successUser ? (
-                <div style={{ color: "black" }}>{this.state.errMsg}</div>
-                ) : ''
-              }
+              {this.state.userMsg}
               <hr style={{width: "90%",margin:"0 auto"}}/>
             </form>
           </div>

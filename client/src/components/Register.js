@@ -3,8 +3,9 @@ import axios from "axios";
 
 class Register extends Component {
   state = {
-    err: "",
-    userCreate: "",
+    userExist: false,
+    successUser: false,
+    errMsg: '',
     email: "",
     password: ""
   };
@@ -15,7 +16,7 @@ class Register extends Component {
 
     this.setState({
       err: "",
-      userCreate: ""
+      successUser: ""
     });
     const newUser = {
       // new user
@@ -24,9 +25,11 @@ class Register extends Component {
     };
     axios
       .post("http://localhost:1407/register", newUser) // post pour registrer les données
-      .then(response => {
+      .then(response => { 
+        console.log(response)
         this.setState({
-          userCreate: response.data.email, // confirmation creation user
+          successUser: true, // confirmation creation user
+          errMsg: response.data.userMsg,
           email: "",
           password: ""
         });
@@ -71,19 +74,16 @@ class Register extends Component {
                 Register
               </button>
 
-              {this.state.userCreate ? (
-                <div style={{ color: "black" }}>{`L'utilisateur ${
-                  this.state.userCreate
-                } a été crée`}</div>
-              ) : (
-                ""
-              )}
+              {this.state.successUser ? (
+                <div style={{ color: "black" }}>{this.state.errMsg}</div>
+                ) : ''
+              }
+            {/* //   {this.state.userExist ? (
+            //     <div style={{ color: "black" }}>{this.state.errMsg}</div>
+            //   ) : (
+            //     ""
+            //   )} */}
 
-              {this.state.err ? (
-                <div style={{ color: "black" }}>{this.state.err}</div>
-              ) : (
-                ""
-              )}
               <hr />
             </form>
           </div>

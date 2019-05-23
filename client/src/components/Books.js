@@ -3,7 +3,8 @@ import axios from "axios";
 
 export default class Books extends Component {
   state = {
-    books: []
+    books: [],
+    cart: []
   };
 
   componentDidMount() {
@@ -22,20 +23,29 @@ export default class Books extends Component {
       });
   }
 
-  render() {
-    //console.log(this.state.books)
+  addToCart = (book) => {
+    const copyCart = this.state.cart;
 
-    const bookList = this.state.books.map(book => {
+    copyCart.push(book);
+
+    this.setState({ cart: [...copyCart] });
+
+    localStorage.setItem('mon panier', JSON.stringify(copyCart))
+  }
+
+  render() {
+    const bookList = this.state.books.map((book,i) => {
       return (
         <div key={book.id} style={{ padding: "20px", textAlign: "center" }}>
           <h2>{book.title}</h2>
           <h3>Author: {book.author}</h3>
           <img
             src={book.imageUrl}
-            style={{ width: "225px", heigth: "300px" }}
+            style={{ width: "188px", heigth: "250px" }}
             alt="book-img"
           />
           <p>Price: </p>
+          <button onClick={() => this.addToCart(book)}>add to cart</button>
         </div>
       );
     });

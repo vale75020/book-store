@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import axios from 'axios'
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
 
   state = {
-    username:"",
+    redirect: false,
+    email:"",
     password:""
   }
 
@@ -14,17 +16,24 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     })
-    .then(function (response) {
-      console.log(response);
+    .then( (response) => {
+      localStorage.setItem('token', response.data.token)
+
+      this.setState({ redirect: true }) 
     })
     .catch(function (error) {
-
       console.log(error);
     });
     this.setState({  // reinitializer inputs
       email:"",
       password:""
     })
+  }
+
+  isLoginRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/'/>
+    }
   }
  
   handleChange = (e) => {
@@ -55,6 +64,7 @@ class Login extends Component {
           required
         />
         <button className="buttonLogin" onClick={this.login}>LOGIN</button>
+        {this.isLoginRedirect()}
       </div>
     );
   }

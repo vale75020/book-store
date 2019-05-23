@@ -78,13 +78,7 @@ class Register extends Component {
                 <div style={{ color: "black" }}>{this.state.errMsg}</div>
                 ) : ''
               }
-            {/* //   {this.state.userExist ? (
-            //     <div style={{ color: "black" }}>{this.state.errMsg}</div>
-            //   ) : (
-            //     ""
-            //   )} */}
-
-              <hr />
+              <hr style={{width: "90%",margin:"0 auto"}}/>
             </form>
           </div>
         </div>

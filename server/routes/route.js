@@ -58,28 +58,6 @@ app.post("/register", async (req, res) => {
       password: hash
     };
 
-//     User.findOne({ email: email }, (err, user) => {
-//       if (err) {
-//         console.log("err", err);
-//       } else {
-//         if (user) {
-//           res.status(422).send(
-//            "User already exists"
-//           );
-//         } else {
-//           User.create(newUser, (err, response) => {
-//             if (err) console.log(err);
-//             res.status(200).send("user register with success");
-//           });
-//         }
-//       }
-//     });
-//   } else {
-//     res.status(412).send("email and password are required fields");
-//   }
-// });
-
-
     User.findOne({ email: email }, ( err, user ) => {
       if (!user) {
         User.create(newUser, (err, response) => {
@@ -98,9 +76,6 @@ app.post("/register", async (req, res) => {
     res.status(412).send("email and password are required fields");
   }
 });
-
-
-
 
 app.get("/cart", (req, res) => {
   res.status(200).send("cart");

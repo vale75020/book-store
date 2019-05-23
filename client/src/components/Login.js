@@ -33,8 +33,9 @@ class Login extends Component {
     })
   }
   render() {
-    return (
+    return (    
       <div className="login">
+          <h1>Login</h1>
         <input
           onChange={this.handleChange}
           value= {this.state.email}
@@ -53,7 +54,7 @@ class Login extends Component {
           placeholder="enter your password"
           required
         />
-        <button onClick={this.login}>LOGIN</button>
+        <button className="buttonLogin" onClick={this.login}>LOGIN</button>
       </div>
     );
   }

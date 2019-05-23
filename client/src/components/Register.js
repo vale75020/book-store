@@ -72,7 +72,7 @@ class Register extends Component {
               </button>
 
               {this.state.userCreate ? (
-                <div style={{ color: "white" }}>{`L'utilisateur ${
+                <div style={{ color: "black" }}>{`L'utilisateur ${
                   this.state.userCreate
                 } a été crée`}</div>
               ) : (
@@ -80,7 +80,7 @@ class Register extends Component {
               )}
 
               {this.state.err ? (
-                <div style={{ color: "white" }}>{this.state.err}</div>
+                <div style={{ color: "black" }}>{this.state.err}</div>
               ) : (
                 ""
               )}

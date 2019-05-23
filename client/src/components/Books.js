@@ -27,21 +27,27 @@ export default class Books extends Component {
 
     const bookList = this.state.books.map(book => {
       return (
-        <div
-          key={book.id}
-          style={{ padding: "20px"}}
-        >
-          <h1>Title: {book.title}</h1>
-          <h2>Author: {book.author}</h2>
+        <div key={book.id} style={{ padding: "20px", textAlign: "center" }}>
+          <h2>{book.title}</h2>
+          <h3>Author: {book.author}</h3>
           <img
             src={book.imageUrl}
-            style={{ width: "300px", heigth: "400px" }}
+            style={{ width: "225px", heigth: "300px" }}
             alt="book-img"
           />
           <p>Price: </p>
         </div>
       );
     });
-    return <div>{bookList}</div>;
+    return (
+      <div>
+        <h1
+          style={{ textAlign: "center", padding: "20px", color: "deepskyblue" }}
+        >
+          Welcome to my BookStore
+        </h1>
+        <div className="container">{bookList}</div>
+      </div>
+    );
   }
 }

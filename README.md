@@ -1,7 +1,3 @@
-
-![md](images/md.png)
-
-
 # book-store
 Full-stack MERN app with authentication using  JWTs.
 
@@ -26,3 +22,5 @@ Full-stack MERN app with authentication using  JWTs.
 
 
 // Server runs on http://localhost:1407 and client on http://localhost:3000
+
+![md](images/md.png)

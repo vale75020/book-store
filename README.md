@@ -1,14 +1,14 @@
-![](images/md.png)
+![md](images/md.png)
 
 
 # book-store
 Full-stack MERN app with authentication using  JWTs.
 
 # clone or download
-$ git clone https://github.com/vale75020/book-store.git
-$ npm i
+## git clone https://github.com/vale75020/book-store.git
+## npm i
 
-This project uses the following technologies:
+# This project uses the following technologies:
 
 ## React and React Router for frontend
 ## Express and Node for the backend

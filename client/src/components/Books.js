@@ -43,13 +43,12 @@ export default class Books extends Component {
           <div style={{ width: "188px", height: "320px", margin:"0 auto"}}>
           <img
             src={book.imageUrl}
-            style={{ width: "100%", verticalAlign: "top"}}
+            style={{ width: "100%", horizontalAlign: "left"}}
             alt="book-img"
           />
           </div>
           <Counter />
           <p>Price: {book.price}$</p>
-          {/* <button onClick={() => this.addToCart(book)}>add to cart</button> */}
           <button onClick={() => this.addToCart(book)} style={{fontSize:"20px"}}>Add to Cart <i class="fa fa-shopping-cart"></i></button>
         </div>
       );

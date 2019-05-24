@@ -35,6 +35,27 @@
       "author": "Douglas Crockford",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nNL.jpg",
       "price": "17"
+    },
+    {
+      "id": "006",
+      "title": "Il est grand temps de rallumer les étoiles",
+      "author": "Virginie Grimaldi",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51QGNoXCihL._SX307_BO1,204,203,200_.jpg",
+      "price": "18"
+    },
+    {
+      "id": "007",
+      "title": "Changer l'eau des fleurs",
+      "author": "Valerie Perrin",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51T0%2BT4l-kL._SX307_BO1,204,203,200_.jpg",
+      "price": "14"
+    },
+    {
+      "id": "008",
+      "title": "Une fille comme elle",
+      "author": "Marc Levy",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51NddL6Xn5L._SX303_BO1,204,203,200_.jpg",
+      "price": "19"
     }
   ]
-}
+ }

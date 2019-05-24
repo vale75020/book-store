@@ -49,7 +49,6 @@ export default class Books extends Component {
           </div>
           <Counter />
           <p>Price: {book.price}$</p>
-          {/* <button onClick={() => this.addToCart(book)}>add to cart</button> */}
           <button onClick={() => this.addToCart(book)} style={{fontSize:"20px"}}>Add to Cart <i class="fa fa-shopping-cart"></i></button>
         </div>
       );

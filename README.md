@@ -1,6 +1,4 @@
-<img src="../images/md.png"
-     alt="Markdown doc"
-     style="float: left; margin-right: 10px;" />
+![](images/md.png)
 
 
 # book-store

@@ -72,11 +72,12 @@ class Register extends Component {
                 required
               />
               <button type="submit" className="buttonRegister">
-                Register
+                REGISTER
               </button>
-
-              {this.state.userMsg}
+             
               <hr style={{width: "90%",margin:"0 auto"}}/>
+              <br/>
+              {this.state.userMsg}
             </form>
           </div>
         </div>

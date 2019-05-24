@@ -5,31 +5,36 @@
       "id": "001",
       "title": "A Song Of Ice And Fire",
       "author": "George R R Martin",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81RsFggiQJL.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81RsFggiQJL.jpg",
+      "price": "10"
     },
     {
       "id": "002",
       "title": "The Four Hour Work Week",
       "author": "Tim Feriss",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81qW97ndkvL.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81qW97ndkvL.jpg",
+      "price": "15"
     },
     {
       "id": "003",
       "title": "Le Comte De Monte Cristo",
       "author": "Alexandre Dumas",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81TLHE5QTjS.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81TLHE5QTjS.jpg",
+      "price": "13"
     },
     {
       "id": "004",
       "title": "The Power Of Habit",
       "author": "Charles Duhigg",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/819ZixpQzUL.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/819ZixpQzUL.jpg",
+      "price": "18"
     },
     {
       "id": "005",
       "title": "JavaScript: The Good Parts",
       "author": "Douglas Crockford",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nNL.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nNL.jpg",
+      "price": "17"
     }
   ]
 }

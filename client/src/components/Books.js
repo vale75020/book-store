@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Counter from './Counter'
 
 export default class Books extends Component {
   state = {
@@ -44,7 +45,8 @@ export default class Books extends Component {
             style={{ width: "188px", heigth: "250px" }}
             alt="book-img"
           />
-          <p>Price: </p>
+          <Counter />
+          <p>Price: {book.price}$</p>
           <button onClick={() => this.addToCart(book)}>add to cart</button>
         </div>
       );

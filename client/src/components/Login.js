@@ -66,9 +66,11 @@ class Login extends Component {
           placeholder="enter your password"
           required
         />
-        {this.state.userMsg}
         <button className="buttonLogin" onClick={this.login}>LOGIN</button>
         {this.isLoginRedirect()}
+        <hr style={{width: "90%",margin:"0 auto"}}/>
+              <br/>
+              {this.state.userMsg}
       </div>
     );
   }

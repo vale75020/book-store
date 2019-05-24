@@ -23,4 +23,4 @@ Full-stack MERN app with authentication using  JWTs.
 
 // Server runs on http://localhost:1407 and client on http://localhost:3000
 
-![md](images/md.png)
+![md](/images/md.png)

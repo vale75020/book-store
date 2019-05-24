@@ -1,4 +1,4 @@
-<img src="./public/images/md.png"
+<img src="../images/md.png"
      alt="Markdown doc"
      style="float: left; margin-right: 10px;" />
 

@@ -25,7 +25,6 @@ class Register extends Component {
     axios
       .post("http://localhost:1407/register", newUser) // post pour registrer les données
       .then(response => { 
-        console.log(response)
         this.setState({
           msgBack: true, // confirmation creation user
           userMsg: response.data.userMsg,

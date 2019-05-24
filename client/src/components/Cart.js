@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Cart extends Component {
 	state = { 
-		cart : JSON.parse(localStorage.getItem('mon panier'))
+		cart : JSON.parse(localStorage.getItem('mon panier')) || []
 	}
 
 	checkIsLogin = () => {
@@ -16,8 +16,8 @@ class Cart extends Component {
 
 	totalCart = () => {
 		const total = this.state.cart.map(bookPrice => parseInt(bookPrice.price))
-		const reducer = (accumulator, currentValue) => accumulator += currentValue;
-		return total.reduce(reducer)
+		const reducer = (accumulator, currentValue) => accumulator + currentValue;
+		return total.reduce(reducer, 0)
 	}
 
 	render() { 
@@ -25,7 +25,7 @@ class Cart extends Component {
 			<div>
 				<div style={{ display: 'flex', justifyContent: 'space-around' }}>
 				{
-					this.state.cart.map((book,i) => {
+					 this.state.cart.map((book,i) => {
 						return (
 						<div key={i} style={{ padding: "20px", textAlign: "center" }}>
 							<h2>{book.title}</h2>
@@ -45,7 +45,6 @@ class Cart extends Component {
 				</div>
 				<h3>Total : {this.totalCart()}</h3>
 				<button onClick={this.checkIsLogin}>check out</button>
-				<button onClick={this.totalCart}>test</button>
 			</div>
 		)
 	}

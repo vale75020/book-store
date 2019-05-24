@@ -1,5 +1,3 @@
-![md](/images/md.png)
-
 # book-store
 Full-stack MERN app with authentication using  JWTs.
 

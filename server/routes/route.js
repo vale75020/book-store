@@ -71,9 +71,9 @@ app.post("/register", async (req, res) => {
       } else {
           res.status(422).send({
             userMsg: "User already exists"
-          })
+          });
         }
-    })
+    });
    } else {
     res.status(412).send("email and password are required fields");
   }

@@ -1,12 +1,16 @@
 import React from 'react';
-import Books from './components/Books';
+//import Home from './components/Home';
+import Home from './components/Home';
 import Login from './components/Login';
-import Register from './components/Register'
-import Navbar from './components/Navbar'
-
+import Register from './components/Register';
+import Navbar from './components/Navbar';
+//import { withRouter, Switch, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+
 import './App.css';
+
+
 
 function App() {
   return (
@@ -14,7 +18,7 @@ function App() {
     <Navbar /> 
     <Router>
     <div className="App">
-      <Route exact path="/" component={Books} />
+      <Route exact path="/" component={Home} />
       <Route  path="/login" component={Login} />
       <Route  path="/register" component={Register} />
     </div>
@@ -24,3 +28,4 @@ function App() {
 }
 
 export default App;
+

@@ -25,7 +25,6 @@ class Register extends Component {
     axios
       .post("http://localhost:1407/register", newUser) // post pour registrer les données
       .then(response => { 
-        console.log(response)
         this.setState({
           msgBack: true, // confirmation creation user
           userMsg: response.data.userMsg,
@@ -36,7 +35,8 @@ class Register extends Component {
       .catch(err => {
         this.setState({    
           msgBack: true, // confirmation creation user
-          userMsg: err.response.data.userMsg})
+         userMsg: err.response.data.userMsg
+       })
         //console.log("in error", err.response.data.userMsg);
       });
   };
@@ -54,7 +54,8 @@ class Register extends Component {
             <h1 className="reg">Register New User</h1>
             <form onSubmit={this.handleOnSubmit}>
               <input
-                className="registerInput"
+              className="form-control my-3"
+                /*className="registerInput" */
                 name="email"
                 type="text"
                 placeholder="enter email"
@@ -63,7 +64,7 @@ class Register extends Component {
                 required
               />
               <input
-                className="registerInput"
+                className="form-control my-3"
                 name="password"
                 type="password"
                 placeholder="enter password"
@@ -71,11 +72,11 @@ class Register extends Component {
                 onChange={this.handleOnChange}
                 required
               />
-              <button type="submit" className="buttonRegister">
+              <button type="submit" className="btn btn-primary float-right">
                 REGISTER
               </button>
              
-              <hr style={{width: "90%",margin:"0 auto"}}/>
+              <hr style={{width: "100%",margin:"0 auto"}}/>
               <br/>
               {this.state.userMsg}
             </form>

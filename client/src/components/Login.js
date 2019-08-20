@@ -10,6 +10,7 @@ class Login extends Component {
     password:"",
     msgBack: false,
     userMsg: '',
+    isLogged: false
   }
 
   login = () => {
@@ -18,13 +19,11 @@ class Login extends Component {
       password: this.state.password
     })
     .then((response) => {
-      console.log(response)
       localStorage.setItem('token', response.data.token)
 
-      this.setState({ redirect: true }) 
+      this.setState({ redirect: true, isLogged: true }) 
     })
     .catch((error) =>  {
-      console.log(error.response.data.userMsg);
       this.setState({ msgBack: true, userMsg: error.response.data.userMsg })
     });
     this.setState({  // reinitializer inputs
@@ -51,7 +50,7 @@ class Login extends Component {
         <input
           onChange={this.handleChange}
           value= {this.state.email}
-          className="loginInput"
+          className="form-control my-3"
           type="text"
           name="email"
           placeholder="enter your email"
@@ -60,15 +59,15 @@ class Login extends Component {
         <input
           onChange={this.handleChange}
           value= {this.state.password}
-          className="loginInput"
+          className="form-control my-3"
           name="password"
           type="password"
           placeholder="enter your password"
           required
         />
-        <button className="buttonLogin" onClick={this.login}>LOGIN</button>
+        <button className="btn btn-primary float-right" onClick={this.login}>{this.state.isLogged ? 'Login' : 'Login'}</button>
         {this.isLoginRedirect()}
-        <hr style={{width: "90%",margin:"0 auto"}}/>
+        <hr style={{width: "100%",margin:"0 auto"}}/>
               <br/>
               {this.state.userMsg}
       </div>

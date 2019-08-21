@@ -65,7 +65,11 @@ class Login extends Component {
           placeholder="enter your password"
           required
         />
+<<<<<<< HEAD
         <button className="btn btn-primary float-right" onClick={this.login}>{this.state.isLogged ? 'Login' : 'Login'}</button>
+=======
+        <button className="buttonLogin" onClick={this.login}>{this.state.isLogged ? 'Login' : 'Logout'}</button>
+>>>>>>> 9e71c77b59357e7351dac9b87be04329fad59118
         {this.isLoginRedirect()}
         <hr style={{width: "100%",margin:"0 auto"}}/>
               <br/>

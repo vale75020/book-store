@@ -38,6 +38,7 @@
     },
     {
       "id": "006",
+<<<<<<< HEAD
       "title": "My songs",
       "author": "Sting",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/91Uu6hvjRKL._AC_SX290_SY290_.jpg",
@@ -52,12 +53,15 @@
     },
     {
       "id": "008",
+=======
+>>>>>>> 9e71c77b59357e7351dac9b87be04329fad59118
       "title": "Il est grand temps de rallumer les étoiles",
       "author": "Virginie Grimaldi",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51QGNoXCihL._SX307_BO1,204,203,200_.jpg",
       "price": "18"
     },
     {
+<<<<<<< HEAD
       "id": "009",
       "title": "Changer l'eau des fleurs",
       "author": "Valerie Perrin",
@@ -70,6 +74,20 @@
       "author": "Marc Levy",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51NddL6Xn5L._SX303_BO1,204,203,200_.jpg",
       "price": "09"
+=======
+      "id": "007",
+      "title": "Changer l'eau des fleurs",
+      "author": "Valerie Perrin",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51T0%2BT4l-kL._SX307_BO1,204,203,200_.jpg",
+      "price": "14"
+    },
+    {
+      "id": "008",
+      "title": "Une fille comme elle",
+      "author": "Marc Levy",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51NddL6Xn5L._SX303_BO1,204,203,200_.jpg",
+      "price": "19"
+>>>>>>> 9e71c77b59357e7351dac9b87be04329fad59118
     }
   ]
-}
+ }
